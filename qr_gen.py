@@ -14,13 +14,11 @@ RESET = "\033[0m"
 def banner():
     os.system("clear")  # Screen clear karega (Linux/Termux me)
     print(f"""{GREEN}
-           _________________
-    .--H--.|                 |
+           _________________ .--H--.|                 |
   _//_||  ||                 |
  [    -|  |'--;--------------'
  '-()-()----()"()^^^^^^^()"()'
- 
- {RESET}""")
+  {RESET}""")
     print(f"{BLUE}<========================================================>{RESET}")
     print(f"{YELLOW}          WELCOME TO QR Code Generator{RESET}")
     print(f"{CYAN}              Created by:BHAJANLAL55{RESET}")
