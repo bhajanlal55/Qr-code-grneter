@@ -4,8 +4,8 @@
 
 1. Clone the repo  
 ```bash
-git clone https://github.com/USERNAME/qrcode-generator.git
-cd qrcode-generator
+https://github.com/bhajanlal55/Qr-code-grneter/edit/main/README.md
+cd Qr-code-grneter 
 pkg install python -y
 pip install qrcode
 pip install pillow
