@@ -1,4 +1,3 @@
-
 import qrcode
 
 # User se input lena
