@@ -1,10 +1,12 @@
-# Qr-code-grneter
-My name is mr . bhajanlal 
+# QR Code Generator (Termux)
+
+## Setup
+
+1. Clone the repo  
+```bash
+git clone https://github.com/USERNAME/qrcode-generator.git
+cd qrcode-generator
 pkg install python -y
 pip install qrcode
 pip install pillow
-python <<EOF
-import qrcode
-img = qrcode.make("https://google.com")
-img.save("/sdcard/myqrcode.png")
-EOF
+python qrcode.py
