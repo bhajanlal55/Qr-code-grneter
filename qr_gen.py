@@ -1,24 +1,35 @@
 import qrcode
 import os
+import time
 
-# Tool ka naam aur tera naam
-tool_name = "HACKING-TOOL v2.2 by Misha Korzhik"
-your_name = "Created by [Your Name]"
+# Colors (ANSI escape codes)
+RED = "\033[1;31m"
+GREEN = "\033[1;32m"
+YELLOW = "\033[1;33m"
+BLUE = "\033[1;34m"
+CYAN = "\033[1;36m"
+MAGENTA = "\033[1;35m"
+RESET = "\033[0m"
 
-# User se input lena
-data = input("? QR Code me kya dalna chahte ho? URL/Text likho: ")
+def banner():
+    os.system("clear")  # Screen clear karega (Linux/Termux me)
+    print(f"""{GREEN}
+    ██╗    ██╗███████╗██████╗  ██████╗ █████╗ ███╗   ███╗
+    ██║    ██║██╔════╝██╔══██╗██╔════╝██╔══██╗████╗ ████║
+    ██║ █╗ ██║█████╗  ██████╔╝██║     ███████║██╔████╔██║
+    ██║███╗██║██╔══╝  ██╔══██╗██║     ██╔══██║██║╚██╔╝██║
+    ╚███╔███╔╝███████╗██████╔╝╚██████╗██║  ██║██║ ╚═╝ ██║
+     ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝
+{RESET}""")
+    print(f"{BLUE}<========================================================>{RESET}")
+    print(f"{YELLOW}          WELCOME TO QR Code Generator{RESET}")
+    print(f"{CYAN}              Created by:BHAJANLAL55{RESET}")
+    print(f"{BLUE}<========================================================>{RESET}\n")
+    time.sleep(100)  # 2 second rukega banner dikhane ke liye
 
-# QR Code generate karna
+# --- MAIN CODE ---
+banner()
+data = input(f"{MAGENTA}[+] Enter text/URL for QR Code: {RESET}")
 img = qrcode.make(data)
-
-# File save karna
 img.save("/sdcard/myqrcode.png")
-
-# Output mein tool ka naam, tera naam, aur YouTube link
-print(f"\n{tool_name}")
-print(f"{your_name}")
-print("Tutorial: https://www.youtube.com/watch?v=example")
-print("? QR Code ban gaya: /sdcard/myqrcode.png")
-
-# YouTube link ko open karne ka attempt (Termux mein kaam karega agar Android hai)
-os.system("am start https://www.youtube.com/watch?v=example")
+print(f"{GREEN}[✓] QR Code saved successfully in /sdcard/myqrcode.png {RESET}")
