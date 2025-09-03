@@ -23,7 +23,7 @@ def banner():
     print(f"{YELLOW}          WELCOME TO QR Code Generator{RESET}")
     print(f"{CYAN}              Created by:BHAJANLAL55{RESET}")
     print(f"{BLUE}<========================================================>{RESET}\n")
-    time.sleep(100)  # 2 second rukega banner dikhane ke liye
+    time.sleep(2)  # 2 second rukega banner dikhane ke liye
 
 # --- MAIN CODE ---
 banner()
