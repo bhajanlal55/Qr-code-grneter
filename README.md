@@ -5,7 +5,7 @@
 1. Clone the repo  
 ```bash
 https://github.com/bhajanlal55/Qr-code-grneter
-```bash
+2.```bash
 cd Qr-code-grneter 
 ```bash
 pip install qrcode[pil]
