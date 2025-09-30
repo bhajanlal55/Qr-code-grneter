@@ -4,10 +4,10 @@
 
 1. Clone the repo  
 ```bash
-https://github.com/bhajanlal55/Qr-code-grneter
+git clone https://github.com/bhajanlal55/Qr-code-grneter
 
 cd Qr-code-grneter 
 
-pip install qrcode[pil]
+pip install -r requirements.txt
 
-python3 -m venv qrvenv source qrvenv/bin/activate
+python qr_generator.py
