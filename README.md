@@ -19,8 +19,8 @@ source qrvenv/bin/activate
 # 4. Required Python package install
 pip install qrcode[pil]
 
-# 5. Folder me available Python files check karo
 ls
 
-# 6. Script run karo (file name check karke)
-python qr_gen.py   # agar file ka naam alag ho to wahi use karo
+python qr_gen.py   
+
+deactivate
