@@ -1,5 +1,0 @@
-sudo apt update
-
-pip install qrcode[pil]
-
-python3 -m venv qrvenv source qrvenv/bin/ac
