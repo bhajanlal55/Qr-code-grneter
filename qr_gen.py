@@ -1,33 +1,39 @@
 import qrcode
 import os
-import time
+from datetime import datetime
 
-# Colors (ANSI escape codes)
-RED = "\033[1;31m"
-GREEN = "\033[1;32m"
-YELLOW = "\033[1;33m"
-BLUE = "\033[1;34m"
-CYAN = "\033[1;36m"
-MAGENTA = "\033[1;35m"
-RESET = "\033[0m"
+def main():
+    print("=== QR Code Generator ===\n")
+    
+    # User input
+    data = input("Aap kis cheez ka QR banana chahte ho? (Link ya text dalen): ")
 
-def banner():
-    os.system("clear")  # Screen clear karega (Linux/Termux me)
-    print(f"""{GREEN}
-           _________________ .--H--.|                 |
-  _//_||  ||                 |
- [    -|  |'--;--------------'
- '-()-()----()"()^^^^^^^()"()'
-  {RESET}""")
-    print(f"{BLUE}<========================================================>{RESET}")
-    print(f"{YELLOW}          WELCOME TO QR Code Generator{RESET}")
-    print(f"{CYAN}              Created by:BHAJANLAL55{RESET}")
-    print(f"{BLUE}<========================================================>{RESET}\n")
-    time.sleep(2)  # 2 second rukega banner dikhane ke liye
+    # Folder jahan save karna h (Desktop)
+    save_folder = os.path.join(os.path.expanduser("~"), "Desktop", "QR_Codes")
+    os.makedirs(save_folder, exist_ok=True)
 
-# --- MAIN CODE ---
-banner()
-data = input(f"{MAGENTA}[+] Enter text/URL for QR Code: {RESET}")
-img = qrcode.make(data)
-img.save("/sdcard/myqrcode.png")
-print(f"{GREEN}[✓] QR Code saved successfully in /sdcard/myqrcode.png {RESET}")
+    # Unique file name generate karo
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    file_path = os.path.join(save_folder, f"qr_{timestamp}.png")
+
+    # QR code generate karo
+    qr = qrcode.QRCode(
+        version=1,
+        box_size=2,  # chota size ASCII preview ke liye
+        border=1
+    )
+    qr.add_data(data)
+    qr.make(fit=True)
+
+    # Image save karo
+    img = qr.make_image(fill='black', back_color='white')
+    img.save(file_path)
+
+    print(f"\n✅ QR Code generate ho gaya! File: {file_path}")
+
+    # Terminal me ASCII preview
+    print("\nQR Code Preview:\n")
+    qr.print_ascii(invert=True)
+
+if __name__ == "__main__":
+    main()
