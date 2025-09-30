@@ -5,7 +5,11 @@
 1. Clone the repo  
 ```bash
 https://github.com/bhajanlal55/Qr-code-grneter
-```cd Qr-code-grneter 
-```pip install qrcode[pil]
-```python3 -m venv qrvenv
+```bash
+cd Qr-code-grneter 
+```bash
+pip install qrcode[pil]
+```bash
+python3 -m venv qrvenv
+```bash
 source qrvenv/bin/activate
